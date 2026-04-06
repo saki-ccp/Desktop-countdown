@@ -15,6 +15,18 @@
 - 窗口置顶
 - 系统托盘
 
+## 演示
+
+![演示1](picture/1.png)
+
+![演示2](picture/2.png)
+
+![演示3](picture/3.png)
+
+![演示4](picture/4.png)
+
+![演示5](picture/5.png)
+
 ## 技术栈
 
 - Electron 33
