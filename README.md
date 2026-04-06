@@ -17,15 +17,15 @@
 
 ## 演示
 
-![演示1](picture/1.png)
+<img src="picture/1.png" alt="演示1" width="50%">
 
-![演示2](picture/2.png)
+<img src="picture/2.png" alt="演示2" width="50%">
 
-![演示3](picture/3.png)
+<img src="picture/3.png" alt="演示3" width="50%">
 
-![演示4](picture/4.png)
+<img src="picture/4.png" alt="演示4" width="50%">
 
-![演示5](picture/5.png)
+<img src="picture/5.png" alt="演示5" width="50%">
 
 ## 技术栈
 
