@@ -1,0 +1,136 @@
+/* ===== 主题系统 ===== */
+:root {
+  --radius: 14px;
+  --radius-sm: 8px;
+  --shadow: 0 4px 24px rgba(0,0,0,0.08);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.12);
+  --transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* 蓝紫梦境 */
+.theme-blue-purple {
+  --bg-primary: #f0f0ff;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255,255,255,0.85);
+  --bg-gradient: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  --bg-body: linear-gradient(160deg, #e8eaf6 0%, #f3e5f5 50%, #ede7f6 100%);
+  --text-primary: #2d2b55;
+  --text-secondary: #6c63a8;
+  --text-muted: #9e97c9;
+  --accent: #667eea;
+  --accent-light: #8b9cf7;
+  --accent-glow: rgba(102, 126, 234, 0.3);
+  --border: rgba(102, 126, 234, 0.15);
+  --countdown-color: #4a47a3;
+  --countdown-glow: rgba(102, 126, 234, 0.2);
+  --btn-hover: rgba(102, 126, 234, 0.1);
+  --titlebar-bg: rgba(240, 240, 255, 0.92);
+}
+
+/* 粉紫星辰 */
+.theme-pink-purple {
+  --bg-primary: #fef0f5;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255,255,255,0.85);
+  --bg-gradient: linear-gradient(135deg, #f093fb 0%, #f5576c 100%);
+  --bg-body: linear-gradient(160deg, #fce4ec 0%, #f3e5f5 50%, #ffeeff 100%);
+  --text-primary: #4a2040;
+  --text-secondary: #a8578a;
+  --text-muted: #c9a0b8;
+  --accent: #e84393;
+  --accent-light: #fd79a8;
+  --accent-glow: rgba(232, 67, 147, 0.3);
+  --border: rgba(232, 67, 147, 0.15);
+  --countdown-color: #b83280;
+  --countdown-glow: rgba(232, 67, 147, 0.2);
+  --btn-hover: rgba(232, 67, 147, 0.1);
+  --titlebar-bg: rgba(254, 240, 245, 0.92);
+}
+
+/* 天青竹韵 */
+.theme-cyan-green {
+  --bg-primary: #f0faf5;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255,255,255,0.85);
+  --bg-gradient: linear-gradient(135deg, #43e97b 0%, #38f9d7 100%);
+  --bg-body: linear-gradient(160deg, #e0f7fa 0%, #e8f5e9 50%, #f1f8e9 100%);
+  --text-primary: #1a4a3a;
+  --text-secondary: #4a8a7a;
+  --text-muted: #8abcad;
+  --accent: #00b894;
+  --accent-light: #55efc4;
+  --accent-glow: rgba(0, 184, 148, 0.3);
+  --border: rgba(0, 184, 148, 0.15);
+  --countdown-color: #00876a;
+  --countdown-glow: rgba(0, 184, 148, 0.2);
+  --btn-hover: rgba(0, 184, 148, 0.1);
+  --titlebar-bg: rgba(240, 250, 245, 0.92);
+}
+
+/* 暖橘晚风 */
+.theme-warm-orange {
+  --bg-primary: #fff8f0;
+  --bg-secondary: #ffffff;
+  --bg-card: rgba(255,255,255,0.85);
+  --bg-gradient: linear-gradient(135deg, #f6d365 0%, #fda085 100%);
+  --bg-body: linear-gradient(160deg, #fff3e0 0%, #fce4ec 50%, #fff8e1 100%);
+  --text-primary: #4a3520;
+  --text-secondary: #a87650;
+  --text-muted: #c9a888;
+  --accent: #e17055;
+  --accent-light: #fab1a0;
+  --accent-glow: rgba(225, 112, 85, 0.3);
+  --border: rgba(225, 112, 85, 0.15);
+  --countdown-color: #c0533a;
+  --countdown-glow: rgba(225, 112, 85, 0.2);
+  --btn-hover: rgba(225, 112, 85, 0.1);
+  --titlebar-bg: rgba(255, 248, 240, 0.92);
+}
+
+/* 深色模式覆盖 */
+.dark-mode {
+  --bg-primary: #1a1a2e;
+  --bg-secondary: #16213e;
+  --bg-card: rgba(30, 30, 60, 0.85);
+  --bg-body: linear-gradient(160deg, #0f0c29 0%, #1a1a2e 50%, #24243e 100%);
+  --text-primary: #e8e8ff;
+  --text-secondary: #a0a0d0;
+  --text-muted: #6c6c9a;
+  --border: rgba(255,255,255,0.1);
+  --shadow: 0 4px 24px rgba(0,0,0,0.3);
+  --shadow-lg: 0 8px 40px rgba(0,0,0,0.4);
+  --titlebar-bg: rgba(26, 26, 46, 0.95);
+  --btn-hover: rgba(255,255,255,0.08);
+}
+
+.dark-mode.theme-blue-purple {
+  --accent: #8b9cf7;
+  --accent-light: #a5b4fc;
+  --accent-glow: rgba(139, 156, 247, 0.4);
+  --countdown-color: #a5b4fc;
+  --countdown-glow: rgba(139, 156, 247, 0.3);
+}
+
+.dark-mode.theme-pink-purple {
+  --accent: #fd79a8;
+  --accent-light: #ff9ec5;
+  --accent-glow: rgba(253, 121, 168, 0.4);
+  --countdown-color: #ff9ec5;
+  --countdown-glow: rgba(253, 121, 168, 0.3);
+}
+
+.dark-mode.theme-cyan-green {
+  --accent: #55efc4;
+  --accent-light: #81ffd9;
+  --accent-glow: rgba(85, 239, 196, 0.4);
+  --countdown-color: #81ffd9;
+  --countdown-glow: rgba(85, 239, 196, 0.3);
+}
+
+.dark-mode.theme-warm-orange {
+  --accent: #fab1a0;
+  --accent-light: #ffc8b8;
+  --accent-glow: rgba(250, 177, 160, 0.4);
+  --countdown-color: #ffc8b8;
+  --countdown-glow: rgba(250, 177, 160, 0.3);
+}

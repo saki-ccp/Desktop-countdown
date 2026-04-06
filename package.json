@@ -1,0 +1,54 @@
+{
+  "name": "zhongkao-countdown",
+  "version": "1.3.0",
+  "description": "中考桌面倒计时 - 陪你冲刺梦想高中",
+  "main": "main.js",
+  "scripts": {
+    "start": "electron .",
+    "build": "electron-builder --win",
+    "build:nsis": "electron-builder --win nsis",
+    "build:portable": "electron-builder --win portable",
+    "dist": "node scripts/dist.js"
+  },
+  "author": "ZhongKao Countdown",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^33.0.0",
+    "electron-builder": "^25.0.0"
+  },
+  "build": {
+    "appId": "com.zhongkao.countdown",
+    "productName": "中考倒计时",
+    "directories": {
+      "output": "dist"
+    },
+    "files": [
+      "main.js",
+      "preload.js",
+      "icon.ico",
+      "build/icon.ico",
+      "src/**/*"
+    ],
+    "win": {
+      "icon": "icon.ico",
+      "extraResources": ["icon.ico"],
+      "target": [
+        {
+          "target": "nsis",
+          "arch": ["x64", "ia32"]
+        }
+      ]
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true,
+      "createDesktopShortcut": true,
+      "createStartMenuShortcut": true,
+      "artifactName": "zhongkao-countdown-setup-${version}.exe",
+      "shortcutName": "中考倒计时",
+      "installerLanguages": ["zh_CN"],
+      "language": 2052,
+      "deleteAppDataOnUninstall": true
+    }
+  }
+}

@@ -1,0 +1,536 @@
+/* ===== 全局基础 ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-user-select: none;
+  user-select: none;
+}
+
+body {
+  font-family: 'Microsoft YaHei UI', 'Segoe UI', sans-serif;
+  overflow: hidden;
+  background: transparent;
+}
+
+#app {
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-body);
+  border-radius: 0;
+  border: none;
+  box-shadow: none;
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  transition: background 0.3s ease;
+}
+
+/* ===== 紧凑模式：圆角+阴影+边框 ===== */
+#app.compact {
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  box-shadow: var(--shadow-lg);
+}
+
+/* ===== 标题栏 ===== */
+.title-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 10px 20px;
+  background: var(--titlebar-bg);
+  backdrop-filter: blur(20px);
+  -webkit-app-region: drag;
+  flex-shrink: 0;
+  border-bottom: 1px solid var(--border);
+}
+
+.title-bar-left {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.app-badge {
+  font-size: 14px;
+}
+
+.title-bar-text {
+  font-size: 12px;
+  color: var(--text-secondary);
+  font-weight: 500;
+}
+
+.title-bar-buttons {
+  display: flex;
+  gap: 2px;
+  -webkit-app-region: no-drag;
+}
+
+.tb-btn {
+  width: 32px;
+  height: 28px;
+  border: none;
+  border-radius: 6px;
+  background: transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.15s ease;
+}
+
+.tb-btn svg {
+  width: 14px;
+  height: 14px;
+}
+
+.tb-btn:hover {
+  background: var(--btn-hover);
+  color: var(--text-primary);
+}
+
+.btn-close:hover {
+  background: #e81123;
+  color: white;
+}
+
+/* 置顶按钮激活态 */
+.btn-pin.active {
+  color: var(--accent);
+  background: var(--accent-glow);
+}
+
+.btn-pin.active:hover {
+  background: var(--accent-glow);
+}
+
+/* ===== 主内容 ===== */
+.main-content {
+  flex: 1;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 40px 20px 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.main-content > * {
+  width: 100%;
+  max-width: 520px;
+}
+
+.main-content::-webkit-scrollbar {
+  width: 4px;
+}
+
+.main-content::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.main-content::-webkit-scrollbar-thumb {
+  background: var(--border);
+  border-radius: 2px;
+}
+
+/* ===== 头部标题 ===== */
+.header-section {
+  text-align: center;
+  padding: 8px 0;
+}
+
+.main-title {
+  font-size: 32px;
+  font-weight: 700;
+  letter-spacing: 4px;
+  background: var(--bg-gradient);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.target-school {
+  font-size: 16px;
+  color: var(--text-secondary);
+  margin-top: 8px;
+  font-weight: 500;
+}
+
+.target-school:empty {
+  display: none;
+}
+
+/* ===== 倒计时核心 ===== */
+.countdown-section {
+  display: flex;
+  justify-content: center;
+}
+
+.countdown-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 36px 40px;
+  text-align: center;
+  box-shadow: var(--shadow);
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+}
+
+.countdown-card::before {
+  content: '';
+  position: absolute;
+  top: 0; left: 0; right: 0;
+  height: 3px;
+  background: var(--bg-gradient);
+}
+
+.countdown-label {
+  font-size: 18px;
+  color: var(--text-secondary);
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.countdown-days-wrapper {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  gap: 8px;
+  margin: 20px 0;
+}
+
+.countdown-days {
+  font-family: 'Bahnschrift', 'DIN Alternate', 'Segoe UI', monospace;
+  font-size: 120px;
+  font-weight: 700;
+  line-height: 1;
+  color: var(--countdown-color);
+  text-shadow: 0 0 40px var(--countdown-glow);
+  animation: pulse-glow 3s ease-in-out infinite;
+}
+
+@keyframes pulse-glow {
+  0%, 100% { text-shadow: 0 0 30px var(--countdown-glow); }
+  50% { text-shadow: 0 0 50px var(--countdown-glow), 0 0 80px var(--countdown-glow); }
+}
+
+.countdown-days-unit {
+  font-size: 30px;
+  color: var(--text-secondary);
+  font-weight: 600;
+}
+
+.countdown-detail {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+  margin: 12px 0;
+}
+
+.detail-item {
+  display: inline-flex;
+  align-items: baseline;
+  gap: 2px;
+}
+
+.detail-item span:first-child {
+  font-family: 'Bahnschrift', 'Segoe UI', monospace;
+  font-size: 28px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.detail-item small {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+}
+
+.detail-sep {
+  font-size: 22px;
+  color: var(--text-muted);
+  font-weight: 300;
+  margin: 0 2px;
+}
+
+.exam-date {
+  font-size: 14px;
+  color: var(--text-muted);
+  margin-top: 10px;
+}
+
+/* ===== 励志名言 ===== */
+.quote-section {
+  flex-shrink: 0;
+}
+
+.quote-card {
+  background: var(--bg-card);
+  border-radius: var(--radius);
+  border: 1px solid var(--border);
+  padding: 20px 24px;
+  box-shadow: var(--shadow);
+  position: relative;
+  cursor: default;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, opacity 0.3s ease;
+}
+
+.quote-card:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-lg);
+}
+
+.quote-icon {
+  font-size: 16px;
+  margin-bottom: 6px;
+}
+
+.quote-text {
+  font-size: 15px;
+  line-height: 1.8;
+  color: var(--text-primary);
+  letter-spacing: 0.5px;
+}
+
+.quote-author {
+  font-size: 13px;
+  color: var(--text-muted);
+  margin-top: 8px;
+  text-align: right;
+}
+
+.quote-author:empty {
+  display: none;
+}
+
+.quote-card.fade-out {
+  opacity: 0;
+  transform: translateY(6px);
+}
+
+.quote-card.fade-in {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* ===== 重要日期 ===== */
+.dates-section {
+  flex-shrink: 0;
+}
+
+.section-title {
+  font-size: 16px;
+  color: var(--text-secondary);
+  font-weight: 600;
+  margin-bottom: 12px;
+}
+
+.dates-list {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.date-item {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background: var(--bg-card);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border);
+  padding: 12px 16px;
+  font-size: 14px;
+}
+
+.date-item-name {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+.date-item-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.date-item-countdown {
+  color: var(--accent);
+  font-weight: 600;
+  font-family: 'Bahnschrift', monospace;
+}
+
+.date-item-date {
+  color: var(--text-muted);
+  font-size: 12px;
+}
+
+.date-item.passed {
+  opacity: 0.5;
+}
+
+.date-item.passed .date-item-countdown {
+  color: var(--text-muted);
+}
+
+/* ===== 底部操作栏 ===== */
+.bottom-bar {
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px 0;
+  flex-shrink: 0;
+}
+
+.action-btn {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  padding: 10px 20px;
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  background: var(--bg-card);
+  color: var(--text-secondary);
+  font-size: 14px;
+  cursor: pointer;
+  transition: all 0.15s ease;
+  font-family: inherit;
+}
+
+.action-btn:hover {
+  background: var(--btn-hover);
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+.action-btn svg {
+  flex-shrink: 0;
+}
+
+/* ===== 已过期状态 ===== */
+.countdown-expired .countdown-days {
+  font-size: 48px;
+  animation: none;
+}
+
+.countdown-expired .countdown-label {
+  font-size: 16px;
+}
+
+/* ===== 入场动画 ===== */
+@keyframes slide-up {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+.header-section    { animation: slide-up 0.3s ease-out; }
+.countdown-section { animation: slide-up 0.35s ease-out 0.05s both; }
+.quote-section     { animation: slide-up 0.35s ease-out 0.1s both; }
+.dates-section     { animation: slide-up 0.35s ease-out 0.15s both; }
+.bottom-bar        { animation: slide-up 0.3s ease-out 0.2s both; }
+
+/* ========================================================
+   紧凑模式 —— 缩小窗口时的自适应样式
+   ======================================================== */
+#app.compact .main-content {
+  padding: 16px 16px 12px;
+  gap: 14px;
+}
+
+#app.compact .main-content > * {
+  max-width: 100%;
+}
+
+#app.compact .header-section {
+  padding: 2px 0;
+}
+
+#app.compact .main-title {
+  font-size: 20px;
+  letter-spacing: 2px;
+}
+
+#app.compact .target-school {
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+#app.compact .countdown-card {
+  padding: 20px 24px;
+}
+
+#app.compact .countdown-label {
+  font-size: 13px;
+  letter-spacing: 1px;
+}
+
+#app.compact .countdown-days {
+  font-size: 72px;
+}
+
+#app.compact .countdown-days-wrapper {
+  margin: 10px 0;
+}
+
+#app.compact .countdown-days-unit {
+  font-size: 20px;
+}
+
+#app.compact .detail-item span:first-child {
+  font-size: 20px;
+}
+
+#app.compact .detail-item small {
+  font-size: 11px;
+}
+
+#app.compact .detail-sep {
+  font-size: 16px;
+}
+
+#app.compact .countdown-detail {
+  margin: 6px 0;
+}
+
+#app.compact .exam-date {
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+#app.compact .quote-card {
+  padding: 14px 16px;
+}
+
+#app.compact .quote-text {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+#app.compact .quote-author {
+  font-size: 11px;
+}
+
+#app.compact .section-title {
+  font-size: 13px;
+  margin-bottom: 8px;
+}
+
+#app.compact .date-item {
+  padding: 8px 12px;
+  font-size: 12px;
+}
+
+#app.compact .action-btn {
+  padding: 7px 14px;
+  font-size: 12px;
+}
+
+#app.compact .title-bar {
+  padding: 6px 12px;
+}

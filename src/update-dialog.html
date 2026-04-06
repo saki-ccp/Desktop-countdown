@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <title>壁纸更新</title>
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body {
+      background: transparent;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+      font-family: 'Microsoft YaHei', 'PingFang SC', sans-serif;
+      user-select: none;
+      -webkit-app-region: drag;
+      overflow: hidden;
+    }
+    .card {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 24px 32px;
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      box-shadow: 0 8px 32px rgba(0, 0, 0, 0.18);
+    }
+    .spinner {
+      width: 32px;
+      height: 32px;
+      border: 3px solid #e5e7eb;
+      border-top-color: #6366f1;
+      border-radius: 50%;
+      animation: spin 0.8s linear infinite;
+      flex-shrink: 0;
+    }
+    @keyframes spin { to { transform: rotate(360deg); } }
+    .check-icon {
+      width: 32px;
+      height: 32px;
+      border-radius: 50%;
+      background: #22c55e;
+      color: #fff;
+      font-size: 18px;
+      line-height: 32px;
+      text-align: center;
+      flex-shrink: 0;
+      display: none;
+    }
+    .message {
+      font-size: 14px;
+      color: #374151;
+      white-space: nowrap;
+    }
+    body.done .spinner { display: none; }
+    body.done .check-icon { display: block; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <div class="spinner"></div>
+    <div class="check-icon">&#10003;</div>
+    <div class="message">正在更新桌面壁纸...</div>
+  </div>
+</body>
+</html>

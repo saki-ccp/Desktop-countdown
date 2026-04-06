@@ -1,0 +1,16 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(dotnet:*)",
+      "Bash(node:*)",
+      "Bash(where cargo:*)",
+      "Bash(npm install:*)",
+      "Bash(taskkill:*)",
+      "Bash(npx electron-builder:*)",
+      "Bash(rm:*)",
+      "Bash(ls:*)",
+      "Bash(xxd:*)",
+      "Bash(npm run:*)"
+    ]
+  }
+}

@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>壁纸</title>
+  <link rel="stylesheet" href="styles/themes.css">
+  <link rel="stylesheet" href="styles/wallpaper.css">
+</head>
+<body>
+  <div id="wallpaperApp" class="theme-blue-purple">
+    <div class="wallpaper-content">
+      <!-- 标题 -->
+      <div class="wp-header">
+        <h1 class="wp-title" id="wpTitle">中考倒计时</h1>
+        <p class="wp-school" id="wpSchool"></p>
+      </div>
+
+      <!-- 倒计时核心 -->
+      <div class="wp-countdown">
+        <div class="wp-countdown-label">距离中考还有</div>
+        <div class="wp-days-wrapper">
+          <span class="wp-days" id="wpDays">0</span>
+          <span class="wp-days-unit">天</span>
+        </div>
+        <div class="wp-exam-date" id="wpExamDate">目标日期：2026年6月14日</div>
+      </div>
+
+      <!-- 励志名言 -->
+      <div class="wp-quote">
+        <div class="wp-quote-icon">✨</div>
+        <p class="wp-quote-text" id="wpQuoteText"></p>
+        <p class="wp-quote-author" id="wpQuoteAuthor"></p>
+      </div>
+
+      <!-- 重要日期 -->
+      <div class="wp-dates" id="wpDates"></div>
+    </div>
+  </div>
+
+  <script src="js/quotes.js"></script>
+  <script src="js/wallpaper-renderer.js"></script>
+</body>
+</html>

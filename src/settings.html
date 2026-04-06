@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>设置</title>
+  <link rel="stylesheet" href="styles/themes.css">
+  <link rel="stylesheet" href="styles/settings.css">
+</head>
+<body>
+  <div id="settingsApp" class="theme-blue-purple">
+    <!-- 标题栏 -->
+    <div class="title-bar">
+      <div class="title-bar-left">
+        <span class="app-badge">⚙️</span>
+        <span class="title-bar-text">设置</span>
+      </div>
+      <div class="title-bar-buttons">
+        <button class="tb-btn btn-close" id="btnCloseSettings">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="6" y1="6" x2="18" y2="18"/><line x1="18" y1="6" x2="6" y2="18"/>
+          </svg>
+        </button>
+      </div>
+    </div>
+
+    <div class="settings-content">
+      <!-- 设计者寄语 -->
+      <div class="author-lines">
+        <p class="author-line designer">设计者：ccp——2021届墙新学校毕业生</p>
+        <p class="author-line message">留言：祝大家中考加油，金榜题名！</p>
+        <p class="author-line contact">若对该程序有任何疑问或者感兴趣想了解的话ovo，可以联系我：13715982433（wx）</p>
+      </div>
+
+      <!-- 基本设置 -->
+      <div class="settings-group">
+        <h3 class="group-title">🎯 基本设置</h3>
+
+        <div class="setting-item">
+          <label>中考日期</label>
+          <input type="date" id="examDate" class="setting-input">
+        </div>
+
+        <div class="setting-item">
+          <label>自定义标题</label>
+          <input type="text" id="customTitle" class="setting-input" placeholder="中考倒计时" maxlength="20">
+        </div>
+
+        <div class="setting-item">
+          <label>目标学校</label>
+          <input type="text" id="targetSchool" class="setting-input" placeholder="填写你的梦想高中" maxlength="30">
+        </div>
+      </div>
+
+      <!-- 显示设置 -->
+      <div class="settings-group">
+        <h3 class="group-title">🎨 显示设置</h3>
+
+        <div class="setting-item toggle-item">
+          <label>显示秒级倒计时</label>
+          <label class="switch">
+            <input type="checkbox" id="showSeconds">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item toggle-item">
+          <label>窗口置顶</label>
+          <label class="switch">
+            <input type="checkbox" id="alwaysOnTop">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item toggle-item">
+          <label>深色模式</label>
+          <label class="switch">
+            <input type="checkbox" id="darkMode">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item toggle-item">
+          <label>开机自启动</label>
+          <label class="switch">
+            <input type="checkbox" id="autoStart">
+            <span class="slider"></span>
+          </label>
+        </div>
+
+        <div class="setting-item toggle-item">
+          <div>
+            <label>桌面壁纸模式</label>
+            <small class="setting-hint">将倒计时设为桌面壁纸，关闭后恢复原壁纸</small>
+          </div>
+          <label class="switch">
+            <input type="checkbox" id="wallpaperMode">
+            <span class="slider"></span>
+          </label>
+        </div>
+      </div>
+
+      <!-- 主题选择 -->
+      <div class="settings-group">
+        <h3 class="group-title">🌈 主题风格</h3>
+        <div class="theme-grid">
+          <button class="theme-option" data-theme="blue-purple">
+            <div class="theme-preview bp"></div>
+            <span>蓝紫梦境</span>
+          </button>
+          <button class="theme-option" data-theme="pink-purple">
+            <div class="theme-preview pp"></div>
+            <span>粉紫星辰</span>
+          </button>
+          <button class="theme-option" data-theme="cyan-green">
+            <div class="theme-preview cg"></div>
+            <span>天青竹韵</span>
+          </button>
+          <button class="theme-option" data-theme="warm-orange">
+            <div class="theme-preview wo"></div>
+            <span>暖橘晚风</span>
+          </button>
+        </div>
+      </div>
+
+      <!-- 重要日期管理 -->
+      <div class="settings-group">
+        <h3 class="group-title">📅 重要日期</h3>
+        <div id="importantDates" class="dates-editor"></div>
+        <button class="add-date-btn" id="btnAddDate">+ 添加日期</button>
+      </div>
+
+      <!-- 保存按钮 -->
+      <div class="save-section">
+        <button class="save-btn" id="btnSave">保存设置</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="js/settings.js"></script>
+</body>
+</html>
