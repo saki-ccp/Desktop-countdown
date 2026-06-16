@@ -2,6 +2,8 @@
 
 一款桌面倒计时应用，陪你冲刺梦想高中。
 
+> 📌 也有**高考版**，在 [`gaokao`](https://github.com/saki-ccp/Desktop-countdown/tree/gaokao) 分支。两个版本代码基本一致，仅文案、默认目标日期等处不同。
+
 ## 功能特性
 
 - 中考倒计时显示（天/时/分/秒）
