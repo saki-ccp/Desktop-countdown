@@ -17,7 +17,7 @@ function applyTheme() {
 
 function populateForm() {
   document.getElementById('examDate').value = config.examDate || '';
-  document.getElementById('customTitle').value = config.title || '中考倒计时';
+  document.getElementById('customTitle').value = config.title || '高考倒计时';
   document.getElementById('targetSchool').value = config.targetSchool || '';
   document.getElementById('showSeconds').checked = config.showSeconds !== false;
   document.getElementById('alwaysOnTop').checked = !!config.alwaysOnTop;
@@ -104,7 +104,7 @@ function bindEvents() {
   document.getElementById('btnSave').addEventListener('click', async () => {
     const newConfig = {
       examDate: document.getElementById('examDate').value,
-      title: document.getElementById('customTitle').value || '中考倒计时',
+      title: document.getElementById('customTitle').value || '高考倒计时',
       targetSchool: document.getElementById('targetSchool').value,
       showSeconds: document.getElementById('showSeconds').checked,
       alwaysOnTop: document.getElementById('alwaysOnTop').checked,

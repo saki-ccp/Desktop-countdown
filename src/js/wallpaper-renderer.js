@@ -23,7 +23,7 @@ function applyTheme() {
 
 function updateContent() {
   // 标题
-  document.getElementById('wpTitle').textContent = config.title || '中考倒计时';
+  document.getElementById('wpTitle').textContent = config.title || '高考倒计时';
 
   // 目标学校
   const schoolEl = document.getElementById('wpSchool');

@@ -9,7 +9,7 @@ const configPath = path.join(userDataPath, 'config.json');
 
 const defaultConfig = {
   examDate: '2026-06-14',
-  title: '中考倒计时',
+  title: '高考倒计时',
   targetSchool: '',
   alwaysOnTop: false,
   showSeconds: true,
@@ -23,7 +23,7 @@ const defaultConfig = {
   windowY: undefined,
   importantDates: [
     { name: '一模考试', date: '2026-04-15' },
-    { name: '体育中考', date: '2026-04-20' },
+    { name: '体育高考', date: '2026-04-20' },
     { name: '二模考试', date: '2026-05-20' }
   ]
 };
@@ -416,7 +416,7 @@ function createTray() {
     { label: '退出', click: () => doQuit() }
   ]);
 
-  tray.setToolTip('中考倒计时');
+  tray.setToolTip('高考倒计时');
   tray.setContextMenu(contextMenu);
   tray.on('double-click', () => showMainWindow());
 }

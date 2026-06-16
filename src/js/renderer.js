@@ -47,7 +47,7 @@ function applyCompactMode(isCompact) {
 
 // ==================== 界面更新 ====================
 function updateUI() {
-  const title = config.title || '中考倒计时';
+  const title = config.title || '高考倒计时';
   $('#mainTitle').textContent = title;
   $('#titleBarText').textContent = title;
 
